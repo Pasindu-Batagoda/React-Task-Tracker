@@ -2,15 +2,15 @@
 import Button from "./Button"
 
 //React Arrow Function Component for Header
-const Header = ({title}) => {
-     //Creating the onClick function
-    const onClick =() => {
-        console.log('click')
-    }
+const Header = ({ title, onAdd, showAdd }) => {
     return (
         <header className='header'>
            <h1>{title}</h1>
-           <Button color='green' text='Add' onClick={onClick}/>
+           
+           {/*Change "Add" button color and text*/}
+           
+           <Button color={showAdd ? 'red' : 'green'} 
+           text={showAdd ? 'Close' : 'Add'} onClick={onAdd}/>
         </header>
     )
 }
